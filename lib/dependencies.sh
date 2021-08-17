@@ -148,9 +148,9 @@ yarn_2_install() {
 
   # If there is no cache we can't run immutable cache because a cache will be created by default
   if ! has_yarn_cache "$build_dir"; then
-    monitor "yarn-2-install" yarn install --immutable 2>&1
+    monitor "yarn-2-install" yarn install --immutable --inline-builds 2>&1
   else
-    monitor "yarn-2-install" yarn install --immutable --immutable-cache 2>&1
+    monitor "yarn-2-install" yarn install --immutable --immutable-cache --inline-builds 2>&1
   fi
 }
 
